@@ -1,0 +1,30 @@
+{
+  "name": "palette-prompt",
+  "version": "1.0.0",
+  "description": "React component to make paintboxes render on screen",
+  "main": "palette.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/persinammon4/palette-prompt-component.git"
+  },
+  "keywords": [
+    "art",
+    "palette",
+    "paintbox"
+  ],
+  "author": "Monica Kumaran",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/persinammon4/palette-prompt-component/issues"
+  },
+  "homepage": "https://github.com/persinammon4/palette-prompt-component#readme",
+  "files": [
+    "palette.js",
+    "README.md",
+    "package.json"
+  ]
+
+}

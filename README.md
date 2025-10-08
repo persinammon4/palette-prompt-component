@@ -62,3 +62,23 @@ function App() {
 
 export default App;
 ```
+
+### Node Package
+
+The component is also published as a Node package: https://www.npmjs.com/package/palette-prompt
+
+```
+npm i palette-prompt
+```
+
+Then import at top of file as either
+
+```
+import PalettePrompt from 'palette-prompt';
+\\ or
+import { Palette } from 'palette-prompt';
+```
+
+### Future Direction
+
+Also have the onClick function be passed in as an optional prop to the Palette component.
