@@ -1,17 +1,8 @@
-# palette-prompt-component
-Creating a React component to make paintboxes render on screen
+import React, { useEffect, useRef } from "react";
 
-### Test
+export function Palette({ colorHexCodeArray, textArray }) {
+  const canvasRef = useRef(null);
 
-```
-cd test-app
-npm start
-Navigate to http://localhost:3000
-```
-
-### Modify Behavior of Palette
-
-```
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -41,24 +32,17 @@ Navigate to http://localhost:3000
     // Callback function removes the listener to prevent multiple event listeners from rerun of script
     return () => canvas.removeEventListener("click", handleClick);
   }, [colorHexCodeArray, textArray]);
-```
 
-This is an anonymous function that draws palettes and pairs the color with the same index
-text from the two arrays passed in to the component. [Atrament.js](https://github.com/jakubfiala/atrament) can be embedded in a webpage to create a drawing pad whose color switches depending on the given colors.
-
-### Basic Code Usage
-
-```
-// Keep this at top of file
-import { Palette } from "./palette.js";
-
-function App() {
-  const colors = ["#a90b0bff", "#26a026ff", "#2323a0ff", "#c3c33fff"];
-  const labels = ["Red", "Green", "Blue", "Yellow"];
-
-  // Pass in props of an array of color hex codes and associated text labels
-  return <Palette colorHexCodeArray={colors} textArray={labels} />;
+  return (
+    <div id="palette-container">
+      <canvas
+        ref={canvasRef}
+        width={colorHexCodeArray.length * 40}
+        height={40}
+        style={{ border: "1px solid #000", cursor: "pointer" }}
+      />
+    <div id="palette-text" style={{ fontFamily: "Roboto", fontSize: "16px" }}
+></div>
+    </div>
+  );
 }
-
-export default App;
-```
