@@ -71,11 +71,9 @@ The component is also published as a Node package: https://www.npmjs.com/package
 npm i palette-prompt
 ```
 
-Then import at top of file as either
+Then import at top of file.
 
 ```
-import PalettePrompt from 'palette-prompt';
-\\ or
 import { Palette } from 'palette-prompt';
 ```
 
