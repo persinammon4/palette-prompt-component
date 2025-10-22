@@ -9,7 +9,7 @@ export function Palette({ colorHexCodeArray, textArray }) {
   function largestFactor(value) {
 			//so more row based
 			//taking largest factor so more squares per row - horizontal looking
-	    for(let i = value-1; i >= 1; i--) {
+	    for(let i = value-1; i > 1; i--) { // don't include 1 as an option and get a column vector
 	        if(value % i === 0) {
 	            return i;
 	        }
@@ -48,13 +48,13 @@ export function Palette({ colorHexCodeArray, textArray }) {
 
     // Click handler to update text based on clicked color
     const handleClick = (event) => {
-      const rect = canvas.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
+      const rect = canvas.getBoundingClientRect(); // gets canvas position and size relative to viewport
+      const x = event.clientX - rect.left; // canvas local x is actual x - rect.left
+      const y = event.clientY - rect.top; // canvas local y is actual y - rect.top
 
-      const col = Math.floor(x / blockWidth);
-      const row = Math.floor(y / blockWidth);
-      const index = row * colLength + col;
+      const col = Math.floor(x / blockWidth); // click position of box, floor to get int
+      const row = Math.floor(y / blockWidth); // click position of box, floor to get int
+      const index = row * colLength + col; // unrolled array index
 
       if (textArray[index]) {
         document.getElementById("palette-text").innerText = textArray[index];

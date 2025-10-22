@@ -68,7 +68,7 @@ import { Palette } from 'palette-prompt';
 
 ### Future Direction
 
-- DECIDED NOT TO PURSUE: Also have the onClick function be passed in as an optional prop to the Palette component.
-- DECIDED NOT TO PURSUE: Change font from Roboto to Courier.
-- DECIDED NOT TO PURSUE: Implement shuffleColors
-- DONE: Implement the logic to create multiple rows of colors.
+- Decided not to pursue: Also have the onClick function be passed in as an optional prop to the Palette component.
+- Decided not to pursue: Change font from Roboto to Courier.
+- Decided not to pursue: Implement shuffleColors
+- Done: Implement the logic to create multiple rows of colors.
