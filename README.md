@@ -13,18 +13,7 @@ Navigate to http://localhost:3000
 
 ```
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-
-    const blockWidth = 40; // width of each color block
-
-    // Draw the palette colors
-    for (let i = 0; i < colorHexCodeArray.length; i++) {
-      ctx.fillStyle = colorHexCodeArray[i];
-      ctx.fillRect(i * blockWidth, 0, blockWidth, 40);
-    }
-
+    ...
     // Click handler to update text based on clicked color
     const handleClick = (event) => {
       const rect = canvas.getBoundingClientRect();
@@ -44,7 +33,7 @@ Navigate to http://localhost:3000
 ```
 
 This is an anonymous function that draws palettes and pairs the color with the same index
-text from the two arrays passed in to the component. [Atrament.js](https://github.com/jakubfiala/atrament) can be embedded in a webpage to create a drawing pad whose color switches depending on the given colors.
+text from the two arrays passed in to the component. [Atrament.js](https://github.com/jakubfiala/atrament) is embedded in a webpage to create a drawing pad whose color switches depending on the given colors.
 
 ### Basic Code Usage
 
@@ -56,7 +45,7 @@ function App() {
   const colors = ["#a90b0bff", "#26a026ff", "#2323a0ff", "#c3c33fff"];
   const labels = ["Red", "Green", "Blue", "Yellow"];
 
-  // Pass in props of an array of color hex codes and associated text labels
+  // Pass in props of an array of color hex codes and associated text labels; note that arrays must be same length
   return <Palette colorHexCodeArray={colors} textArray={labels} />;
 }
 
@@ -79,6 +68,7 @@ import { Palette } from 'palette-prompt';
 
 ### Future Direction
 
-- Also have the onClick function be passed in as an optional prop to the Palette component.
-- Change font from Roboto to Courier.
-- Implement shuffleColors and the logic to create multiple rows of colors.
+- DECIDED NOT TO PURSUE: Also have the onClick function be passed in as an optional prop to the Palette component.
+- DECIDED NOT TO PURSUE: Change font from Roboto to Courier.
+- DECIDED NOT TO PURSUE: Implement shuffleColors
+- DONE: Implement the logic to create multiple rows of colors.
